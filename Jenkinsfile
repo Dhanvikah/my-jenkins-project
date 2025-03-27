@@ -55,7 +55,6 @@ pipeline {
     }
 }
 
----
 
 # Dockerfile
 FROM openjdk:11-jre-slim
@@ -63,7 +62,6 @@ WORKDIR /app
 COPY target/your-app.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
----
 
 # Helm Chart Structure (helm/)
 helm/
@@ -74,7 +72,6 @@ helm/
 │   ├── service.yaml
 │   ├── ingress.yaml (if needed)
 
----
 
 # Kubernetes Deployment YAML (helm/templates/deployment.yaml)
 apiVersion: apps/v1
@@ -97,7 +94,6 @@ spec:
           ports:
             - containerPort: 8080
 
----
 
 # Kubernetes Service YAML (helm/templates/service.yaml)
 apiVersion: v1
